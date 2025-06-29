@@ -20,6 +20,21 @@ def find_all_game_paths(source):
     return game_paths
 
 
+
+def create_dir(path):
+    if not os.path.exists(path):
+        os.mkdir(path)
+
+def get_name_from_paths(paths, to_strip):
+    new_names = []
+    for path in paths:
+        _, dir_name = os.path.split(path)
+        new_dir_name = dir_name.replace(to_strip, "")
+        new_names.append(new_dir_name)
+
+    return new_names
+
+
 def main(source, target):
     cwd = os.getcwd()
     source_path = os.path.join(cwd, source)
@@ -27,6 +42,10 @@ def main(source, target):
 
     game_paths = find_all_game_paths(source_path)
     print(game_paths)
+
+
+    create_dir(target_path)
+    new_game_dirs = get_name_from_paths(game_paths, Game_Dir_Pattern)
 
 if __name__ == "__main__":
     args = sys.argv
