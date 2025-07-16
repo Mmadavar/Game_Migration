@@ -19,8 +19,10 @@ def find_all_game_paths(source):
 
     return game_paths
 
-
-
+def copy_and_overwrite(source, destination):
+    if os.path.exists(destination):
+        shutil.rmtree(destination)
+    shutil.copytree(source, destination)
 
 
 def create_dir(path):
@@ -47,12 +49,6 @@ def make_json_metadata_file(path, game_dirs):
         json.dump(data, f)
 
 
-def copy_and_overwrite(source, destination):
-    if os.path.exists(destination):
-        shutil.rmtree(destination)
-    shutil.copytree(source, destination)
-
-
 
 def main(source, target):
     cwd = os.getcwd()
@@ -60,7 +56,8 @@ def main(source, target):
     target_path = os.path.join(cwd, target)
 
     game_paths = find_all_game_paths(source_path)
-    new_game_dirs = get_name_from_paths(game_paths, Game_Dir_Pattern)
+
+    new_game_dirs = get_name_from_paths(game_paths, "_game")
 
     create_dir(target_path)
 
@@ -71,7 +68,7 @@ def main(source, target):
     json_path = os.path.join(target_path, "get_game_data.json")
     make_json_metadata_file(json_path, new_game_dirs)
 
-    print(new_game_dirs)
+ 
 
 if __name__ == "__main__":
     args = sys.argv
