@@ -21,6 +21,8 @@ def find_all_game_paths(source):
 
 
 
+
+
 def create_dir(path):
     if not os.path.exists(path):
         os.mkdir(path)
@@ -46,6 +48,7 @@ def main(source, target):
 
     create_dir(target_path)
     new_game_dirs = get_name_from_paths(game_paths, Game_Dir_Pattern)
+    print(new_game_dirs)
 
 if __name__ == "__main__":
     args = sys.argv
