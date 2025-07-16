@@ -27,6 +27,8 @@ def copy_and_overwrite(source, destination):
 
 
 
+
+
 def create_dir(path):
     if not os.path.exists(path):
         os.mkdir(path)
@@ -54,10 +56,6 @@ def main(source, target):
     for src, dest  in zip(game_paths, new_game_dirs):
         dest_path = os.path.join(target_path, dest)
         copy_and_overwrite(src, dest_path)
-
-
-
-
 
 if __name__ == "__main__":
     args = sys.argv
