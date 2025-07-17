@@ -40,11 +40,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-
-    "git-widget-placeholder": "JSON__Metadata",
-
-    "git-widget-placeholder": "Copy",
-
+    "git-widget-placeholder": "Compile__Inside__Directory",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,11 +67,9 @@
       <updated>1749617718529</updated>
       <workItem from="1749617720690" duration="183000" />
       <workItem from="1751121677929" duration="534000" />
-
       <workItem from="1752704477912" duration="1216000" />
-
       <workItem from="1752703367320" duration="631000" />
-
+      <workItem from="1752707245647" duration="5535000" />
     </task>
     <servers />
   </component>
